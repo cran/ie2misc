@@ -10,6 +10,17 @@ install.packages("ie2misc")
 ```
 
 
+
+# IMPORTANT NOTE for Microsoft Windows users
+
+Based on Stack Overflow answer from [r - Error when saving xlsx workbook with package openxlsx](http://stackoverflow.com/questions/23367375/error-when-saving-xlsx-workbook-with-package-openxlsx)
+
+Make sure that you have the appropriate [Rtools](https://cran.r-project.org/bin/windows/Rtools/) installed for your R version
+
+Make sure that the system PATH is properly configured
+
+
+
 # Examples
 ```R
 library(ie2misc)
