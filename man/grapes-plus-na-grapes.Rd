@@ -6,8 +6,8 @@
 \title{\%+na\%}
 \source{
 \enumerate{
-   \item Using `:=` in data.table to sum the values of two columns in R, ignoring NAs - Stack Overflow answered by 42- on Oct 28 2012. See   \url{http://stackoverflow.com/questions/13106645/using-in-data-table-to-sum-the-values-of-two-columns-in-r-ignoring-nas}.
-   \item R - merge unequal regular (15 min intervals) and irregular time series within 10 minutes - Stack Overflow asked by iembry on Jan 12 2015 and edited by iembry on Feb 2 2015. See \url{http://stackoverflow.com/questions/27930548/r-data-table-dyadic-operator-and-summing-duplicate-rows-based-on-time-se}.
+   \item Using `:=` in data.table to sum the values of two columns in R, ignoring NAs - Stack Overflow answered by 42- on Oct 28 2012. See   \url{https://stackoverflow.com/questions/13106645/using-in-data-table-to-sum-the-values-of-two-columns-in-r-ignoring-nas}.
+   \item R - merge unequal regular (15 min intervals) and irregular time series within 10 minutes - Stack Overflow asked by iembry on Jan 12 2015 and edited by iembry on Feb 2 2015. See \url{https://stackoverflow.com/questions/27930548/r-data-table-dyadic-operator-and-summing-duplicate-rows-based-on-time-se}.
 }
 }
 \usage{
@@ -28,7 +28,7 @@ This function "defines a dyadic operator that will behave differently than
   when \code{x} is a number and \code{x = NA} when \code{x = 0}.
 }
 \examples{
-library(ie2misc)
+library("ie2misc")
 a <- 1:10
 b <- c(98:106, NA)
 
@@ -56,6 +56,7 @@ df1 <- data.frame(a, b)
 df1[, 1] \%+na\% df1[, 2]
 
 
+library("data.table")
 # using a data.table of the numeric vectors a and b
 df2 <- data.table(a, b)
 df2[, 1, with = FALSE][[1]] \%+na\% df2[, 2, with = FALSE][[1]]
@@ -63,4 +64,3 @@ df2[, 1, with = FALSE][[1]] \%+na\% df2[, 2, with = FALSE][[1]]
 
 
 }
-

@@ -3,31 +3,36 @@
 \encoding{UTF-8}
 \name{adaps}
 \alias{adaps}
-\alias{adaps2}
 \alias{adapsBATCH}
+\alias{adaps2}
 \title{adaps, adaps2, and adapsBATCH}
 \source{
 \enumerate{
-   \item r - How can I check if a file is empty? - Stack Overflow answered by Konrad Rudolph and edited by Geekuna Matata on Apr 23 2014. See \url{http://stackoverflow.com/questions/23254002/how-can-i-check-if-a-file-is-empty}.
-   \item r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
-   \item RDocumentation: TclInterface {tcltk}. See \url{http://www.rdocumentation.org/packages/tcltk/versions/3.3.1/topics/TclInterface}.
-   \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}.
-   \item r - read csv files and perform function, then bind together - Stack Overflow answered by bjoseph on Jan 8 2015. See \url{http://stackoverflow.com/questions/27846715/read-csv-files-and-perform-function-then-bind-together}.
-   \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{http://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
-   \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 2013. See \url{http://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
-   \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{http://r.789695.n4.nabble.com/How-to-change-the-default-Date-format-for-write-csv-function-td989826.html}.
+   \item r - How can I check if a file is empty? - Stack Overflow answered by Konrad Rudolph and edited by Geekuna Matata on Apr 23 2014. See \url{https://stackoverflow.com/questions/23254002/how-can-i-check-if-a-file-is-empty}.
+   \item r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+   \item RDocumentation: TclInterface {tcltk}. See \url{https://www.rdocumentation.org/packages/tcltk/versions/3.3.1}.
+   \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{https://web.archive.org/web/20160521051207/http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}. Retrieved thanks to the Internet Archive: Wayback Machine
+   \item r - read csv files and perform function, then bind together - Stack Overflow answered by bjoseph on Jan 8 2015. See \url{https://stackoverflow.com/questions/27846715/read-csv-files-and-perform-function-then-bind-together}.
+   \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{https://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
+   \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 2013. See \url{https://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
+   \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{https://r.789695.n4.nabble.com/How-to-change-the-default-Date-format-for-write-csv-function-td989826.html}.
    \item RDocumentation: strptime {base}. See \url{http://www.rdocumentation.org/packages/base/versions/3.3.1/topics/strptime}.
-   \item convert date and time string to POSIX in R - Stack Overflow commented by cryo111 on Sep 18 2013. See \url{http://stackoverflow.com/questions/18874400/convert-date-and-time-string-to-posix-in-r/18874863}.
+   \item convert date and time string to POSIX in R - Stack Overflow commented by cryo111 on Sep 18 2013. See \url{https://stackoverflow.com/questions/18874400/convert-date-and-time-string-to-posix-in-r/18874863}.
 }
 }
 \usage{
-adaps(file = tk_choose.files(default = "", caption =
-  "Select file(s) to open & hold down Ctrl to choose more than 1 file", multi =
-  TRUE, filters = matrix(c("ADAPS file", ".rdb", "ADAPS file", ".RDB"), 4, 2,
-  byrow = TRUE)), interactive = TRUE, overwrite = TRUE)
+adaps(
+  file = tk_choose.files(default = "", caption =
+    "Select file(s) to open & hold down Ctrl to choose more than 1 file", multi = TRUE,
+    filters = matrix(c("ADAPS file", ".rdb", "ADAPS file", ".RDB"), 4, 2, byrow = TRUE)),
+  interactive = TRUE,
+  overwrite = TRUE
+)
 
-adapsBATCH(path = tk_choose.dir(caption =
-  "Select directory with the ADAPS .rdb files"), overwrite = TRUE)
+adapsBATCH(
+  path = tk_choose.dir(caption = "Select directory with the ADAPS .rdb files"),
+  overwrite = TRUE
+)
 
 adaps2(file, overwrite = TRUE)
 }
@@ -78,6 +83,7 @@ adaps, adaps2, and adapsBATCH functions perform the same processes on the
 
 
 
+
 The following lines are representative of the .rdb format used in the files
   that these functions can operate on. Note: ntru may not be present. If so,
   then there will only be 3 cases of 16N in the last row. The last row will
@@ -93,7 +99,7 @@ The following lines are representative of the .rdb format used in the files
 }
 \examples{
 \dontrun{
-library(ie2misc)
+library("ie2misc")
 # Example to check the input file format
 # Copy and paste the following code into the R console if you
 # wish to see the ADAPS .rdb input file format.
@@ -126,4 +132,3 @@ adapsBATCH()
 
 
 }
-

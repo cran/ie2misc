@@ -5,7 +5,7 @@
 \alias{mape}
 \title{Mean absolute percent error (MAPE)}
 \source{
-r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
 }
 \usage{
 mape(predicted, observed, na.rm = FALSE)
@@ -31,7 +31,7 @@ This function computes the mean absolute percent error (MAPE).
 \details{
 MAPE is expressed as
 
-\deqn{\frac{1}{n} \sum \limits_{i=1}^n{ 100 \frac{\left| X_i - Y_i \right|} {X_i}}}
+	\deqn{\frac{1}{n} \sum \limits_{i=1}^n{ 100 \frac{\left| X_i - Y_i \right|} {X_i}}}
 
 \describe{
 \item{\emph{n}}{the number of observations}
@@ -39,7 +39,8 @@ MAPE is expressed as
 \item{\emph{Y}}{the predictions}
 }
 
-Below are some points to remember about MAPE from the Ji reference:
+
+	Below are some points to remember about MAPE from the Ji reference:
 \enumerate{
    \item MAPE is "a measure to validate forecast models",
    \item MAPE is "a standardized value and is independent of the unit of
@@ -51,13 +52,13 @@ Below are some points to remember about MAPE from the Ji reference:
 }
 }
 \examples{
-library(ie2misc)
+library("ie2misc")
 obs <- 1:10 # observed
 pre <- 2:11 # predicted
 mape(pre, obs)
 
 
-require(stats)
+require("stats")
 set.seed(100) # makes the example reproducible
 obs1 <- rnorm(100) # observed
 pre1 <- rnorm(100) # predicted
@@ -85,6 +86,7 @@ mape(df1[, 2], df1[, 1])
 # df1[, 2] # predicted values from column 2 of df1
 
 
+library("data.table")
 # using a data.table of the numeric vectors pre1 and obs1
 df2 <- data.table(obs1, pre1)
 mape(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
@@ -104,4 +106,3 @@ Lei Ji and Kevin Gallo, "An Agreement Coefficient for Image Comparison", \emph{P
  for Nash-Sutcliffe model efficiency (NSE), and \code{\link{rmse}} for
  root mean square error (RMSE).
 }
-

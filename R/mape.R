@@ -39,7 +39,7 @@
 #'
 #'
 #' @source
-#' r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+#' r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
 #'
 #'
 #' @references
@@ -63,13 +63,13 @@
 #'
 #'
 #' @examples
-#' library(ie2misc)
+#' library("ie2misc")
 #' obs <- 1:10 # observed
 #' pre <- 2:11 # predicted
 #' mape(pre, obs)
 #'
 #'
-#' require(stats)
+#' require("stats")
 #' set.seed(100) # makes the example reproducible
 #' obs1 <- rnorm(100) # observed
 #' pre1 <- rnorm(100) # predicted
@@ -97,6 +97,7 @@
 #' # df1[, 2] # predicted values from column 2 of df1
 #'
 #'
+#' library("data.table")
 #' # using a data.table of the numeric vectors pre1 and obs1
 #' df2 <- data.table(obs1, pre1)
 #' mape(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])

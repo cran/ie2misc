@@ -7,24 +7,27 @@
 \title{psfFileChange and psfFileChangeBATCH}
 \source{
 \enumerate{
-   \item r - How can I check if a file is empty? - Stack Overflow answered by Konrad Rudolph and edited by Geekuna Matata on Apr 23 2014. See \url{http://stackoverflow.com/questions/23254002/how-can-i-check-if-a-file-is-empty}.
-   \item r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
-   \item RDocumentation: TclInterface {tcltk}. See \url{http://www.rdocumentation.org/packages/tcltk/versions/3.3.1/topics/TclInterface}.
-   \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}.
-   \item Replacing nth line in a text file in R - Stack Overflow answered by Spacedman on Aug 1 2012. See \url{http://stackoverflow.com/questions/11756353/replacing-nth-line-in-a-text-file-in-r}.
-   \item r - read csv files and perform function, then bind together - Stack Overflow answered by bjoseph on Jan 8 2015. See \url{http://stackoverflow.com/questions/27846715/read-csv-files-and-perform-function-then-bind-together}.
-   \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{http://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
-   \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 20134. See \url{http://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
+   \item r - How can I check if a file is empty? - Stack Overflow answered by Konrad Rudolph and edited by Geekuna Matata on Apr 23 2014. See \url{https://stackoverflow.com/questions/23254002/how-can-i-check-if-a-file-is-empty}.
+   \item r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+   \item RDocumentation: TclInterface {tcltk}. See \url{https://www.rdocumentation.org/packages/tcltk/versions/3.3.1}.
+   \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{https://web.archive.org/web/20160521051207/http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}. Retrieved thanks to the Internet Archive: Wayback Machine
+   \item Replacing nth line in a text file in R - Stack Overflow answered by Spacedman on Aug 1 2012. See \url{https://stackoverflow.com/questions/11756353/replacing-nth-line-in-a-text-file-in-r}.
+   \item r - read csv files and perform function, then bind together - Stack Overflow answered by bjoseph on Jan 8 2015. See \url{https://stackoverflow.com/questions/27846715/read-csv-files-and-perform-function-then-bind-together}.
+   \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{https://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
+   \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 20134. See \url{https://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
 }
 }
 \usage{
-psfFileChange(file = tk_choose.files(default = "", caption =
-  "Select file(s) to open & hold down Ctrl to choose more than 1 file", multi =
-  TRUE, filters = matrix(c("Text file", ".psf", "Text file", ".PSF"), 4, 2,
-  byrow = TRUE)), interactive = TRUE)
+psfFileChange(
+  file = tk_choose.files(default = "", caption =
+    "Select file(s) to open & hold down Ctrl to choose more than 1 file", multi = TRUE,
+    filters = matrix(c("Text file", ".psf", "Text file", ".PSF"), 4, 2, byrow = TRUE)),
+  interactive = TRUE
+)
 
-psfFileChangeBATCH(path = tk_choose.dir(caption =
-  "Select the directory with the .psf files"))
+psfFileChangeBATCH(
+  path = tk_choose.dir(caption = "Select the directory with the .psf files")
+)
 }
 \arguments{
 \item{file}{Input .psf file(s) to change specific SkewSE, GenSkew, and
@@ -70,7 +73,7 @@ psfFileChangeBATCH searches for a character vector of patterns
 \examples{
 \dontrun{
 # Examples to change (a) .psf file(s) interactively and non-interactively
-library(ie2misc)
+library("ie2misc")
 psfFileChange() # default where interactive = TRUE
 # Follow the file dialog instructions
 
@@ -108,4 +111,3 @@ psfFileChangeBATCH() # Follow the file dialog instructions
 \author{
 Irucka Embry, Anne Hoos
 }
-

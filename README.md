@@ -3,28 +3,17 @@
 R package that contains Irucka Embry's miscellaneous USGS functions (processing .exp and .psf files, statistical error functions, "+" dyadic operator for use with NA, creating ADAPS and QW spreadsheet files, calculating saturated enthalpy, etc.). Irucka created these functions while a Cherokee Nation Technology Solutions (CNTS) United States Geological Survey (USGS) Contractor and/or USGS employee.
 
 
-# Installation
+# Installation from CRAN
 
 ```R
 install.packages("ie2misc")
 ```
 
 
-
-# IMPORTANT NOTE for Microsoft Windows users
-
-Based on Stack Overflow answer from [r - Error when saving xlsx workbook with package openxlsx](http://stackoverflow.com/questions/23367375/error-when-saving-xlsx-workbook-with-package-openxlsx)
-
-Make sure that you have the appropriate [Rtools](https://cran.r-project.org/bin/windows/Rtools/) installed for your R version
-
-Make sure that the system PATH is properly configured
-
-
-
 # Examples
 ```R
-library(ie2misc)
-require(stats)
+library("ie2misc")
+require("stats")
 
 # 1) Calculate the mean-absolute deviation (MAD)
 set.seed(1003) # makes the example reproducible
@@ -66,7 +55,7 @@ output = "console")
 # 4) Create an .xlsx spreadsheet for each of the following water-quality data
 # sets (follow the file dialog):
 
-file1 <- "http://waterdata.usgs.gov/nwis/dv?cb_80154=on&format=rdb"
+file1 <- "https://waterdata.usgs.gov/nwis/dv?cb_80154=on&format=rdb"
 file2 <- "&site_no=03584500&referred_module=sw&period=&begin_date=1904-07-01"
 file3 <- "&end_date=2016-06-22"
 file4 <- paste0(file1, file2, file3) # used to truncate the file name
@@ -76,7 +65,7 @@ qw2(file4)
 # Suspended sediment concentration, milligrams per liter (Mean)
 
 
-file5 <- "http://waterdata.usgs.gov/nwis/dv?cb_80155=on&format=rdb"
+file5 <- "https://waterdata.usgs.gov/nwis/dv?cb_80155=on&format=rdb"
 file6 <- "&site_no=03584500&referred_module=sw&period=&begin_date=1904-07-01"
 file7 <- "&end_date=2016-06-22"
 file8 <- paste0(file5, file6, file7) # used to truncate the file name
@@ -90,7 +79,7 @@ qw2(file8)
 
 # Disclaimer
 
-This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey, an agency of the United States Department of Interior. For more information, see the official [USGS copyright policy](http://www.usgs.gov/visual-id/credit_usgs.html#copyright)
+This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey, an agency of the United States Department of Interior. For more information, see the official [USGS copyright policy](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits#copyright)
 
 Although this software program has been used by the U.S. Geological Survey (USGS), no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.
 

@@ -56,19 +56,19 @@
 #'
 #' @source
 #' \enumerate{
-#'    \item r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
-#'    \item How to check file extensions in R - Stack Overflow answered by lebatsnok on May 17 2014. See \url{http://stackoverflow.com/questions/23713284/how-to-check-file-extensions-in-r}.
-#'    \item RDocumentation: TclInterface {tcltk}. See \url{http://www.rdocumentation.org/packages/tcltk/versions/3.3.1/topics/TclInterface}.
-#'    \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}.
-#'    \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{http://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
-#'    \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 20134. See \url{http://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
+#'    \item r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+#'    \item How to check file extensions in R - Stack Overflow answered by lebatsnok on May 17 2014. See \url{https://stackoverflow.com/questions/23713284/how-to-check-file-extensions-in-r}.
+#'    \item RDocumentation: TclInterface {tcltk}. See \url{https://www.rdocumentation.org/packages/tcltk/versions/3.3.1}.
+#'    \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{https://web.archive.org/web/20160521051207/http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}. Retrieved thanks to the Internet Archive: Wayback Machine
+#'    \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{https://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
+#'    \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 20134. See \url{https://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
 #'}
 #'
 #'
 #' @references
 #' \enumerate{
 #'    \item "Andrew Revering's List of Meteorological Formulas", \url{http://www.aprweather.com/pages/calc.htm}.
-#'    \item Functional Testing and Design Guides, \emph{Functional Testing Guide: from the Fundamentals to the Field}, "Sidebar 3: How to Calculate Enthalpy", \url{http://www.ftguide.org/ftg/IntegratedOperation/IOC-Sidebars-1-3/IOC-SB3-How-To-Calculate-Enthalpy.htm}.
+#'    \item Functional Testing and Design Guides, \emph{Functional Testing Guide: from the Fundamentals to the Field}, "Sidebar 3: How to Calculate Enthalpy", \url{https://web.archive.org/web/20150216015428/https://www.ftguide.org/ftg/IntegratedOperation/IOC-Sidebars-1-3/IOC-SB3-How-To-Calculate-Enthalpy.htm}. Retrieved thanks to the Internet Archive: Wayback Machine
 #'}
 #'
 #'
@@ -80,12 +80,12 @@
 #'
 #' @examples
 #' \dontrun{
-#' library(ie2misc)
+#' library("ie2misc")
 #' # Example to check the input file format
 #'
 #' # Copy and paste the following code into the R console if you
 #' # wish to see the input file format.
-#' library(openxlsx)
+#' library("openxlsx")
 #' openXL(system.file("extdata", "Saturated_Enthalpy_Example_Input.xlsx",
 #' package = "ie2misc"))
 #'   # opens the workbook using the default spreadsheet application

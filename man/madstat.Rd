@@ -43,13 +43,13 @@ Reference 1 fully discusses MAD, while Reference 2 provides the formula
 used to calculate the MAD.
 }
 \examples{
-library(ie2misc)
+library("ie2misc")
 # Example 1.18 from Kottegoda (page 15)
 obs <- c(50, 56, 42, 53, 49) # annual rainfall in cm
 madstat(obs)
 
 
-require(stats)
+require("stats")
 set.seed(100) # makes the example reproducible
 obs1 <- rnorm(100) # observed
 
@@ -69,6 +69,7 @@ df1 <- data.frame(obs1)
 madstat(df1)
 
 
+library("data.table")
 # using a data.table of the numeric vector obs1
 df2 <- data.table(obs1)
 madstat(df2)
@@ -78,7 +79,7 @@ madstat(df2)
 \references{
 \enumerate{
    \item Cort J. Willmott, Kenji Matsuura, and Scott M. Robeson, "Ambiguities inherent in sums-of-squares-based error statistics", \emph{Atmospheric Environment}, vol. 43, no. 3, pp. 749-752, 2009, \url{http://www.sciencedirect.com/science/article/pii/S1352231008009564}.
-   \item Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "Short Communication: A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{http://onlinelibrary.wiley.com/doi/10.1002/joc.2419/pdf}.
+   \item Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "Short Communication: A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.2419}.
    \item Nathabandu T. Kottegoda and Renzo Rosso, \emph{Statistics, Probability, and Reliability for Civil and Environmental Engineers}, New York City, New York: The McGraw-Hill Companies, Inc., 1997, page 15.
 }
 }
@@ -90,4 +91,3 @@ madstat(df2)
  for Nash-Sutcliffe model efficiency (NSE), and \code{\link{rmse}} for
  root mean square error (RMSE).
 }
-

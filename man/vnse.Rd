@@ -5,7 +5,7 @@
 \alias{vnse}
 \title{Nash-Sutcliffe model efficiency (NSE)}
 \source{
-r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
 }
 \usage{
 vnse(predicted, observed, na.rm = FALSE)
@@ -32,7 +32,7 @@ This function computes the Nash-Sutcliffe model efficiency (NSE) or
 \details{
 NSE or E is expressed as
 
-\deqn{E = 1 - \frac{\sum \limits_{i=1}^n{\left(P_i - O_i\right)^2}}{\sum \limits_{i=1}^n{\left(O_i - \bar{O}\right)^2}}}
+	\deqn{E = 1 - \frac{\sum \limits_{i=1}^n{\left(P_i - O_i\right)^2}}{\sum \limits_{i=1}^n{\left(O_i - \bar{O}\right)^2}}}
 
 \describe{
 \item{\emph{E}}{"Nash and Sutcliffe’s coefficient of efficiency (E)"}
@@ -43,20 +43,20 @@ NSE or E is expressed as
 \item{\emph{\eqn{\bar{O}}}}{the "true" mean of the observations}
 }
 
-Note: Both P and O should have the same units.
+	Note: Both P and O should have the same units.
 
 "Nash and Sutcliffe’s coefficient of efficiency (E)" and other
   "dimensionless measures of average error" are fully discussed in the
   Willmott reference.
 }
 \examples{
-library(ie2misc)
+library("ie2misc")
 obs <- 1:10 # observed
 pre <- 2:11 # predicted
 vnse(pre, obs)
 
 
-require(stats)
+require("stats")
 set.seed(100) # makes the example reproducible
 obs1 <- rnorm(100) # observed
 pre1 <- rnorm(100) # predicted
@@ -84,6 +84,7 @@ vnse(df1[, 2], df1[, 1])
 # df1[, 2] # predicted values from column 2 of df1
 
 
+library("data.table")
 # using a data.table of the numeric vectors pre1 and obs1
 df2 <- data.table(obs1, pre1)
 vnse(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
@@ -95,11 +96,10 @@ vnse(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
 
 }
 \references{
-Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{http://onlinelibrary.wiley.com/doi/10.1002/joc.2419/pdf}.
+Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.2419}.
 }
 \seealso{
 \code{\link{mape}} for mean absolute percent error (MAPE), \code{\link{mae}} for
  mean-absolute error (MAE), \code{\link{madstat}} for mean-absolute deviation (MAD), \code{\link{dr}}
  for "index of agreement (dr)", and \code{\link{rmse}} for root mean square error (RMSE).
 }
-

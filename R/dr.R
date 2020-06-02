@@ -35,11 +35,11 @@
 #'
 #'
 #' @source
-#' r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+#' r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
 #'
 #'
 #' @references
-#' Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{http://onlinelibrary.wiley.com/doi/10.1002/joc.2419/pdf}.
+#' Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.2419}.
 #'
 #'
 #' @encoding UTF-8
@@ -60,13 +60,13 @@
 #'
 #'
 #' @examples
-#' library(ie2misc)
+#' library("ie2misc")
 #' obs <- 1:10 # observed
 #' pre <- 2:11 # predicted
 #' dr(pre, obs)
 #'
 #'
-#' require(stats)
+#' require("stats")
 #' set.seed(100) # makes the example reproducible
 #' obs1 <- rnorm(100) # observed
 #' pre1 <- rnorm(100) # predicted
@@ -94,6 +94,7 @@
 #' # df1[, 2] # predicted values from column 2 of df1
 #'
 #'
+#' library("data.table")
 #' # using a data.table of the numeric vectors pre1 and obs1
 #' df2 <- data.table(obs1, pre1)
 #' dr(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])

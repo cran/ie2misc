@@ -5,7 +5,7 @@
 \alias{rmse}
 \title{Root mean square error (RMSE)}
 \source{
-r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
 }
 \usage{
 rmse(predicted, observed, na.rm = FALSE)
@@ -44,13 +44,13 @@ RMSE is fully discussed in the Willmott reference, including a comparison
   to mean-absolute error (MAE).
 }
 \examples{
-library(ie2misc)
+library("ie2misc")
 obs <- 1:10 # observed
 pre <- 2:11 # predicted
 rmse(pre, obs)
 
 
-require(stats)
+require("stats")
 set.seed(100) # makes the example reproducible
 obs1 <- rnorm(100) # observed
 pre1 <- rnorm(100) # predicted
@@ -78,6 +78,7 @@ rmse(df1[, 2], df1[, 1])
 # df1[, 2] # predicted values from column 2 of df1
 
 
+library("data.table")
 # using a data.table of the numeric vectors pre1 and obs1
 df2 <- data.table(obs1, pre1)
 rmse(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
@@ -97,4 +98,3 @@ Cort J. Willmott and Kenji Matsuura, "Advantages of the mean-absolute error (MAE
  for "index of agreement (dr)", and \code{\link{vnse}} for
  Nash-Sutcliffe model efficiency (NSE).
 }
-

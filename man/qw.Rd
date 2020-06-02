@@ -3,38 +3,45 @@
 \encoding{UTF-8}
 \name{qw}
 \alias{qw}
-\alias{qw2}
 \alias{qwBATCH}
+\alias{qw2}
 \title{qw, qw2 and qwBATCH}
 \source{
 \enumerate{
-   \item r - How can I check if a file is empty? - Stack Overflow answered by Konrad Rudolph and edited by Geekuna Matata on Apr 23 2014. See \url{http://stackoverflow.com/questions/23254002/how-can-i-check-if-a-file-is-empty}.
-   \item r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{http://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
-   \item RDocumentation: TclInterface {tcltk}. See \url{http://www.rdocumentation.org/packages/tcltk/versions/3.3.1/topics/TclInterface}.
-   \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}.
-   \item r - read csv files and perform function, then bind together - Stack Overflow answered by bjoseph on Jan 8 2015. See \url{http://stackoverflow.com/questions/27846715/read-csv-files-and-perform-function-then-bind-together}.
-   \item r - Convert column classes in data.table - Stack Overflow answered by Matt Dowle on Dec 27 2013. See \url{http://stackoverflow.com/questions/7813578/convert-column-classes-in-data-table}.
-   \item Does column exist and how to rearrange columns in R data frame - Stack Overflow answered and edited by Peter McMahan on Aug 2 2009. See \url{http://stackoverflow.com/questions/1177919/does-column-exist-and-how-to-rearrange-columns-in-r-data-frame}.
-   \item time - Dealing with timestamps in R - Stack Overflow answered by Dirk Eddelbuettel on Dec 26 2009. See \url{http://stackoverflow.com/questions/1962278/dealing-with-timestamps-in-r/1962336}.
-   \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{http://r.789695.n4.nabble.com/How-to-change-the-default-Date-format-for-write-csv-function-td989826.html}.
+   \item r - How can I check if a file is empty? - Stack Overflow answered by Konrad Rudolph and edited by Geekuna Matata on Apr 23 2014. See \url{https://stackoverflow.com/questions/23254002/how-can-i-check-if-a-file-is-empty}.
+   \item r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+   \item RDocumentation: TclInterface {tcltk}. See \url{https://www.rdocumentation.org/packages/tcltk/versions/3.3.1}.
+   \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{https://web.archive.org/web/20160521051207/http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}. Retrieved thanks to the Internet Archive: Wayback Machine
+   \item r - read csv files and perform function, then bind together - Stack Overflow answered by bjoseph on Jan 8 2015. See \url{https://stackoverflow.com/questions/27846715/read-csv-files-and-perform-function-then-bind-together}.
+   \item r - Convert column classes in data.table - Stack Overflow answered by Matt Dowle on Dec 27 2013. See \url{https://stackoverflow.com/questions/7813578/convert-column-classes-in-data-table}.
+   \item Does column exist and how to rearrange columns in R data frame - Stack Overflow answered and edited by Peter McMahan on Aug 2 2009. See \url{https://stackoverflow.com/questions/1177919/does-column-exist-and-how-to-rearrange-columns-in-r-data-frame}.
+   \item time - Dealing with timestamps in R - Stack Overflow answered by Dirk Eddelbuettel on Dec 26 2009. See \url{https://stackoverflow.com/questions/1962278/dealing-with-timestamps-in-r/1962336}.
+   \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{https://r.789695.n4.nabble.com/How-to-change-the-default-Date-format-for-write-csv-function-td989826.html}.
    \item RDocumentation: strptime {base}. See \url{http://www.rdocumentation.org/packages/base/versions/3.3.1/topics/strptime}.
-   \item National Water Information System: Help System Time Zone Codes. See \url{http://help.waterdata.usgs.gov/code/tz_query?fmt=html}.
-   \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{http://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
-   \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 2013. See \url{http://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
+   \item National Water Information System: Help System Time Zone Codes. See \url{https://help.waterdata.usgs.gov/code/tz_query?fmt=html}.
+   \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{https://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
+   \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 2013. See \url{https://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
    \item warnings - How do I get rid of the NOTE's generated by R CMD check when using for example ddply in my package? - Stack Overflow answered by shadow on Mar 4 2015 and edited by shadow on Mar 5 2015. See \url{https://stackoverflow.com/questions/28851812/how-do-i-get-rid-of-the-notes-generated-by-r-cmd-check-when-using-for-example-d}.
    \item trinker/qdapRegex - dictionary_maintenance.R. See \url{https://github.com/trinker/qdapRegex/blob/master/inst/dictionary_maintenance.R}.
-   \item excel - Interconverting POSIXct and numeric in R - Stack Overflow by LauraS on May 6 2016. See \url{http://stackoverflow.com/questions/37078772/interconverting-posixct-and-numeric-in-r}.
-   \item convert date and time string to POSIX in R - Stack Overflow commented by cryo111 on Sep 18 2013. See \url{http://stackoverflow.com/questions/18874400/convert-date-and-time-string-to-posix-in-r/18874863}.
+   \item excel - Interconverting POSIXct and numeric in R - Stack Overflow by LauraS on May 6 2016. See \url{https://stackoverflow.com/questions/37078772/interconverting-posixct-and-numeric-in-r}.
+   \item convert date and time string to POSIX in R - Stack Overflow commented by cryo111 on Sep 18 2013. See \url{https://stackoverflow.com/questions/18874400/convert-date-and-time-string-to-posix-in-r/18874863}.
 }
 }
 \usage{
-qw(file = tk_choose.files(default = "", caption =
-  "Select file(s) to open & hold down Ctrl to choose more than 1 file", multi =
-  TRUE, filters = matrix(c("QW file", "*", "QW file", ".rdb", "QW file",
-  ".RDB"), 6, 2, byrow = TRUE)), interactive = TRUE, overwrite = TRUE)
+qw(
+  file = tk_choose.files(default = "", caption =
+    "Select file(s) to open & hold down Ctrl to choose more than 1 file", multi = TRUE,
+    filters = matrix(c("QW file", "*", "QW file", ".rdb", "QW file", ".RDB"), 6, 2, byrow
+    = TRUE)),
+  interactive = TRUE,
+  overwrite = TRUE
+)
 
-qwBATCH(path = tk_choose.dir(caption = "Select directory with the QW files"),
-  pattern = "*.rdb", overwrite = TRUE)
+qwBATCH(
+  path = tk_choose.dir(caption = "Select directory with the QW files"),
+  pattern = "*.rdb",
+  overwrite = TRUE
+)
 
 qw2(file, overwrite = TRUE)
 }
@@ -93,9 +100,9 @@ qw, qw2 and qwBATCH functions perform the same processes on the raw QW
 }
 \examples{
 \dontrun{
-library(ie2misc)
+library("ie2misc")
 # Examples to change (an) QW file(s) interactively and non-interactively
-file1 <- "http://waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=03584500"
+file1 <- "https://waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=03584500"
 file2 <- "&period=&begin_date=1904-07-01&end_date=2016-06-22"
 file3 <- paste0(file1, file2) # used to truncate the file name
 qw2(file3)
@@ -120,4 +127,3 @@ qwBATCH()
 
 
 }
-
