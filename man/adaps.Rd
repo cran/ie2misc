@@ -15,8 +15,8 @@
    \item r - read csv files and perform function, then bind together - Stack Overflow answered by bjoseph on Jan 8 2015. See \url{https://stackoverflow.com/questions/27846715/read-csv-files-and-perform-function-then-bind-together}.
    \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{https://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
    \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 2013. See \url{https://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
-   \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{https://r.789695.n4.nabble.com/How-to-change-the-default-Date-format-for-write-csv-function-td989826.html}.
-   \item RDocumentation: strptime {base}. See \url{http://www.rdocumentation.org/packages/base/versions/3.3.1/topics/strptime}.
+   \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{https://hypatia.math.ethz.ch/pipermail/r-help/2009-December/416010.html}.
+   \item RDocumentation: strptime {base}. See \url{https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/strptime}.
    \item convert date and time string to POSIX in R - Stack Overflow commented by cryo111 on Sep 18 2013. See \url{https://stackoverflow.com/questions/18874400/convert-date-and-time-string-to-posix-in-r/18874863}.
 }
 }
@@ -98,7 +98,9 @@ The following lines are representative of the .rdb format used in the files
 }
 }
 \examples{
-\dontrun{
+
+\donttest{
+
 library("ie2misc")
 # Example to check the input file format
 # Copy and paste the following code into the R console if you

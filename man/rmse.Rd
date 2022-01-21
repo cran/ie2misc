@@ -4,9 +4,6 @@
 \name{rmse}
 \alias{rmse}
 \title{Root mean square error (RMSE)}
-\source{
-r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
-}
 \usage{
 rmse(predicted, observed, na.rm = FALSE)
 }
@@ -50,7 +47,7 @@ pre <- 2:11 # predicted
 rmse(pre, obs)
 
 
-require("stats")
+library("stats")
 set.seed(100) # makes the example reproducible
 obs1 <- rnorm(100) # observed
 pre1 <- rnorm(100) # predicted

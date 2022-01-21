@@ -62,14 +62,14 @@
 #'    \item James Wettenhall & Philippe Grosjean, File Open/Save dialogs in R tcltk, December 01, 2015. See \url{https://web.archive.org/web/20160521051207/http://www.sciviews.org/recipes/tcltk/TclTk-file-open-save-dialogs/}. Retrieved thanks to the Internet Archive: Wayback Machine
 #'    \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{https://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
 #'    \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 20134. See \url{https://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
-#'}
+#' }
 #'
 #'
 #' @references
 #' \enumerate{
-#'    \item "Andrew Revering's List of Meteorological Formulas", \url{http://www.aprweather.com/pages/calc.htm}.
+#'    \item "Andrew Revering's List of Meteorological Formulas", \url{https://aprweather.com/pages/calc.htm}.
 #'    \item Functional Testing and Design Guides, \emph{Functional Testing Guide: from the Fundamentals to the Field}, "Sidebar 3: How to Calculate Enthalpy", \url{https://web.archive.org/web/20150216015428/https://www.ftguide.org/ftg/IntegratedOperation/IOC-Sidebars-1-3/IOC-SB3-How-To-Calculate-Enthalpy.htm}. Retrieved thanks to the Internet Archive: Wayback Machine
-#'}
+#' }
 #'
 #'
 #' @encoding UTF-8
@@ -79,7 +79,8 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#'
+#' \donttest{
 #' library("ie2misc")
 #' # Example to check the input file format
 #'
@@ -123,6 +124,9 @@
 #' @import gWidgets2
 #' @import gWidgets2tcltk
 #' @import utils
+#' @import assertthat
+#' @import checkmate
+#'
 #'
 #' @name sat_enthalpy
 NULL
@@ -142,6 +146,12 @@ if (confirm == FALSE) {
 
   } else {
 
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
+  
 if (file.info(file)$size == 0) {
 
   stop("Your file is empty. Please try again with a different file.")
@@ -223,6 +233,12 @@ saveWorkbook(wb, filesave2, overwrite = overwrite)
 }
 
 } else if (grepl("*.csv", file)) {
+
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 sat <- fread(file)
 
@@ -383,6 +399,13 @@ if (confirm == FALSE) {
 # Source 2 / provide a stop warning if the user wants to change the file
 
   } else {
+  
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
+
 
  if (file.info(file)$size == 0) {
 
@@ -464,6 +487,12 @@ saveWorkbook(wb, filesave8, overwrite = overwrite)
 }
 
 } else if (grepl("*.csv", file)) {
+
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 sat <- fread(file)
 

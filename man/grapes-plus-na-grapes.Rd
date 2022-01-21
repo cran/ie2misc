@@ -6,8 +6,10 @@
 \title{\%+na\%}
 \source{
 \enumerate{
-   \item Using `:=` in data.table to sum the values of two columns in R, ignoring NAs - Stack Overflow answered by 42- on Oct 28 2012. See   \url{https://stackoverflow.com/questions/13106645/using-in-data-table-to-sum-the-values-of-two-columns-in-r-ignoring-nas}.
-   \item R - merge unequal regular (15 min intervals) and irregular time series within 10 minutes - Stack Overflow asked by iembry on Jan 12 2015 and edited by iembry on Feb 2 2015. See \url{https://stackoverflow.com/questions/27930548/r-data-table-dyadic-operator-and-summing-duplicate-rows-based-on-time-se}.
+   \item Using `:=` in data.table to sum the values of two columns in R, ignoring NAs - Stack Overflow answered by 42- on Oct 28 2012. See \url{https://stackoverflow.com/questions/13106645/using-in-data-table-to-sum-the-values-of-two-columns-in-r-ignoring-nas}.
+   \item R - merge unequal regular (15 min intervals) and irregular time series within 10 minutes - Stack Overflow asked by iembry on Jan 12 2015 and edited by iembry on Feb 2 2015. See \url{https://stackoverflow.com/questions/27911643/r-merge-unequal-regular-15-min-intervals-and-irregular-time-series-within-10}.
+   \item r - How to not run an example using roxygen2? - Stack Overflow answered and edited by samkart on Jul 9 2017. (Also see the additional comments in response to the answer.) See \url{https://stackoverflow.com/questions/12038160/how-to-not-run-an-example-using-roxygen2}.
+   \item devtools - Issues in R package after CRAN asked to replace dontrun by donttest - Stack Overflow answered by Hong Ooi on Sep 1 2020. (Also see the additional comments in response to the answer.) See \url{https://stackoverflow.com/questions/63693563/issues-in-r-package-after-cran-asked-to-replace-dontrun-by-donttest}.
 }
 }
 \usage{
@@ -34,9 +36,17 @@ b <- c(98:106, NA)
 
 a \%+na\% b
 
-# Note that if the vector with the NA value(s) is first, then the additive
-# result will still be an NA value(s)
-b \%+na\% a
+
+\donttest{
+# See Source 3 and Source 4
+# Note that if the vector with the NA value(s) is first, then an error
+# message will be displayed as now there are checks for both x and y.
+
+a <- 1:10
+b <- c(98:106, NA)
+
+try(b \%+na\% a)
+}
 
 
 a1 <- 1:12
@@ -58,9 +68,12 @@ df1[, 1] \%+na\% df1[, 2]
 
 library("data.table")
 # using a data.table of the numeric vectors a and b
+
+a <- 1:10
+b <- c(98:106, NA)
+
 df2 <- data.table(a, b)
 df2[, 1, with = FALSE][[1]] \%+na\% df2[, 2, with = FALSE][[1]]
-
 
 
 }

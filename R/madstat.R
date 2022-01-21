@@ -24,21 +24,20 @@
 #'   values should be removed or not.
 #'
 #' @return mean-absolute deviation (MAD) as a numeric \code{\link{vector}} or a named
-#'   numeric vector if using a named object (\code{\link{matrix}}, \code{\link{data.frame}}, or \code{\link{data.table}}). MAD has the
-#'   same units as the observed values. The default choice is that any NA values
-#'   will be kept (\code{na.rm = FALSE}). This can be changed by specifying \code{na.rm = TRUE}, such as \code{madstat(obs, na.rm = TRUE)}.
+#'   numeric vector if using a named object (\code{\link{matrix}}, \code{\link{data.frame}},
+#'   or \code{\link{data.table}}). MAD has the same units as the observed values. The default choice is that any NA values
+#'   will be kept (\code{na.rm = FALSE}). This can be changed by specifying \code{na.rm = TRUE}, such as 
+#'   \code{madstat(obs, na.rm = TRUE)}.
 #'
 #'
-#' @source
-#' \code{\link[moments]{kurtosis}} for use of na.rm for numeric vector, matrix, and data.frame objects
 #'
 #'
 #' @references
 #' \enumerate{
-#'    \item Cort J. Willmott, Kenji Matsuura, and Scott M. Robeson, "Ambiguities inherent in sums-of-squares-based error statistics", \emph{Atmospheric Environment}, vol. 43, no. 3, pp. 749-752, 2009, \url{http://www.sciencedirect.com/science/article/pii/S1352231008009564}.
+#'    \item Cort J. Willmott, Kenji Matsuura, and Scott M. Robeson, "Ambiguities inherent in sums-of-squares-based error statistics", \emph{Atmospheric Environment}, vol. 43, no. 3, pp. 749-752, 2009, \url{https://www.sciencedirect.com/science/article/pii/S1352231008009564}.
 #'    \item Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "Short Communication: A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.2419}.
 #'    \item Nathabandu T. Kottegoda and Renzo Rosso, \emph{Statistics, Probability, and Reliability for Civil and Environmental Engineers}, New York City, New York: The McGraw-Hill Companies, Inc., 1997, page 15.
-#'}
+#' }
 #'
 #' @encoding UTF-8
 #'
@@ -62,7 +61,7 @@
 #' madstat(obs)
 #'
 #'
-#' require("stats")
+#' library("stats")
 #' set.seed(100) # makes the example reproducible
 #' obs1 <- rnorm(100) # observed
 #'
@@ -88,11 +87,17 @@
 #' madstat(df2)
 #'
 #'
+#' @import data.table
+#'
+#'
+#'
+#'
 #' @export
 madstat <- function (observed, na.rm = FALSE) {
 
 # The moments::kurtosis code has been helpful with regards to the treatment of
 # na.rm & the use of apply functions for different R objects
+
 
 if (is.matrix(observed))
 

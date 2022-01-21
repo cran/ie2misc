@@ -4,9 +4,6 @@
 \name{dr}
 \alias{dr}
 \title{Index of agreement (dr)}
-\source{
-r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
-}
 \usage{
 dr(predicted, observed, na.rm = FALSE)
 }
@@ -55,7 +52,7 @@ pre <- 2:11 # predicted
 dr(pre, obs)
 
 
-require("stats")
+library("stats")
 set.seed(100) # makes the example reproducible
 obs1 <- rnorm(100) # observed
 pre1 <- rnorm(100) # predicted
@@ -90,7 +87,6 @@ dr(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
 
 # df2[, 1, with = FALSE][[1]] # observed values from column 1 of df2
 # df2[, 2, with = FALSE][[1]] # predicted values from column 2 of df2
-
 
 
 }

@@ -84,7 +84,8 @@ In the Examples section, there is R code for the user to view the example
   .exp file.
 }
 \examples{
-\dontrun{
+
+\donttest{
 # Example to check the input file format
 library("ie2misc")
 

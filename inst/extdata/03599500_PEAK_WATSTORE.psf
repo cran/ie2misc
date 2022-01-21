@@ -1,0 +1,58 @@
+I ASCI 03599500_PEAK_WATSTORE.TXT
+O File 03599500_PEAK_WATSTORE.PRT
+O Plot Style Graphics
+O Plot Format JPEG
+O Additional Watstore 03599500_PEAK_WATS
+O Export 03599500_PEAK_WATSTORE.EXP
+O Empirical 03599500_PEAK_WATSTORE.emp
+Station 03599500
+     Analyze EMA
+     PCPT_Thresh 1848 2012 0 1E+20 DEFAULT
+     PCPT_Thresh 1874 1886 42000 1E+20 HISTORIC 1
+     PCPT_Thresh 1902 1904 42000 1E+20 HISTORIC 2
+     PCPT_Thresh 1848 1873 61100 1E+20 HIGHEST SINCE NOTE IN SYSTEMATIC RECORD
+     PCPT_Thresh 1887 1887 1E+20 1E+20 STAGE ONLY VALUE, TREAT AS GAP IN SYSTEMATIC R
+     PCPT_Thresh 1888 1901 42000 1E+20 Still part of historic record. Syst begins 1905
+     PCPT_Thresh 1909 1920 1E+20 1E+20 GAP 2 IN SYSTEMATIC RECORD
+     PCPT_Thresh 1987 1987 1E+20 1E+20 GAP 3 IN SYSTEMATIC RECORD
+     Interval 1976 31700 31700 
+     Interval 1977 24800 24800 
+     Interval 1978 21500 21500 
+     Interval 1979 26900 26900 
+     Interval 1980 35100 35100 
+     Interval 1981 9490 9490 
+     Interval 1982 19600 19600 
+     Interval 1983 35000 35000 
+     Interval 1984 30000 30000 
+     Interval 1985 23500 23500 
+     Interval 1986 13900 13900 
+     Interval 1988 21700 21700 
+     Interval 1989 36500 36500 
+     Interval 1990 32600 32600 
+     Interval 1991 52300 52300 
+     Interval 1992 40800 40800 
+     Interval 1993 14600 14600 
+     Interval 1994 39300 39300 
+     Interval 1995 22600 22600 
+     Interval 1996 21400 21400 
+     Interval 1997 28000 28000 
+     Interval 1998 22200 22200 
+     Interval 1999 36100 36100 
+     Interval 2000 21200 21200 
+     Interval 2001 36000 36000 
+     Interval 2002 51000 51000 
+     Interval 2003 48900 48900 
+     Interval 2004 35400 35400 
+     Interval 2005 23200 23200 
+     Interval 2006 28400 28400 
+     Interval 2007 15400 15400 
+     Interval 2008 17300 17300 
+     Interval 2009 30700 30700 
+     Interval 2010 49000 49000 
+     Interval 2011 31200 31200 
+     Interval 2012 15600 15600 
+     BegYear 1848
+     EndYear 2012
+     HistPeriod 165
+     SkewOpt Station
+     LOType MGBT

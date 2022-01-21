@@ -98,7 +98,8 @@ where W or SH (Specific Humidity) is expressed as
 }
 }
 \examples{
-\dontrun{
+
+\donttest{
 library("ie2misc")
 # Example to check the input file format
 
@@ -137,7 +138,7 @@ tincrement = 0.01, output = "csv")
 }
 \references{
 \enumerate{
-   \item "Andrew Revering's List of Meteorological Formulas", \url{http://www.aprweather.com/pages/calc.htm}.
+   \item "Andrew Revering's List of Meteorological Formulas", \url{https://aprweather.com/pages/calc.htm}.
    \item Functional Testing and Design Guides, \emph{Functional Testing Guide: from the Fundamentals to the Field}, "Sidebar 3: How to Calculate Enthalpy", \url{https://web.archive.org/web/20150216015428/https://www.ftguide.org/ftg/IntegratedOperation/IOC-Sidebars-1-3/IOC-SB3-How-To-Calculate-Enthalpy.htm}. Retrieved thanks to the Internet Archive: Wayback Machine
 }
 }

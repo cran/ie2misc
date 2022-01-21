@@ -4,9 +4,6 @@
 \name{mape}
 \alias{mape}
 \title{Mean absolute percent error (MAPE)}
-\source{
-r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
-}
 \usage{
 mape(predicted, observed, na.rm = FALSE)
 }
@@ -58,7 +55,7 @@ pre <- 2:11 # predicted
 mape(pre, obs)
 
 
-require("stats")
+library("stats")
 set.seed(100) # makes the example reproducible
 obs1 <- rnorm(100) # observed
 pre1 <- rnorm(100) # predicted
@@ -98,7 +95,7 @@ mape(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
 
 }
 \references{
-Lei Ji and Kevin Gallo, "An Agreement Coefficient for Image Comparison", \emph{Photogrammetric Engineering & Remote Sensing}, Vol. 72, No. 7, July 2006, p. 823-8335, \url{http://www.ingentaconnect.com/content/asprs/pers/2006/00000072/00000007/art00006}.
+Lei Ji and Kevin Gallo, "An Agreement Coefficient for Image Comparison", \emph{Photogrammetric Engineering & Remote Sensing}, Vol. 72, No. 7, July 2006, p. 823-8335, \url{https://www.ingentaconnect.com/content/asprs/pers/2006/00000072/00000007/art00006}.
 }
 \seealso{
 \code{\link{mae}} for mean-absolute error (MAE), \code{\link{madstat}} for

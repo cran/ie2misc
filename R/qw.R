@@ -60,8 +60,8 @@
 #'    \item r - Convert column classes in data.table - Stack Overflow answered by Matt Dowle on Dec 27 2013. See \url{https://stackoverflow.com/questions/7813578/convert-column-classes-in-data-table}.
 #'    \item Does column exist and how to rearrange columns in R data frame - Stack Overflow answered and edited by Peter McMahan on Aug 2 2009. See \url{https://stackoverflow.com/questions/1177919/does-column-exist-and-how-to-rearrange-columns-in-r-data-frame}.
 #'    \item time - Dealing with timestamps in R - Stack Overflow answered by Dirk Eddelbuettel on Dec 26 2009. See \url{https://stackoverflow.com/questions/1962278/dealing-with-timestamps-in-r/1962336}.
-#'    \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{https://r.789695.n4.nabble.com/How-to-change-the-default-Date-format-for-write-csv-function-td989826.html}.
-#'    \item RDocumentation: strptime {base}. See \url{http://www.rdocumentation.org/packages/base/versions/3.3.1/topics/strptime}.
+#'    \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{https://hypatia.math.ethz.ch/pipermail/r-help/2009-December/416010.html}.
+#'    \item RDocumentation: strptime {base}. See \url{https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/strptime}.
 #'    \item National Water Information System: Help System Time Zone Codes. See \url{https://help.waterdata.usgs.gov/code/tz_query?fmt=html}.
 #'    \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{https://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
 #'    \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 2013. See \url{https://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
@@ -79,7 +79,7 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' library("ie2misc")
 #' # Examples to change (an) QW file(s) interactively and non-interactively
 #' file1 <- "https://waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=03584500"
@@ -115,6 +115,9 @@
 #' @import readxl
 #' @import openxlsx
 #' @import data.table
+#' @import assertthat
+#' @import checkmate
+#'
 #'
 #' @name qw
 NULL
@@ -129,6 +132,12 @@ DateTimes <- datetimes <- DateTimes_Timezone_Corrected <- DateTimes_Timezone_Cor
 # Source 14
 
 if (interactive == TRUE) { # default
+
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (length(file) == 1) {
 
@@ -717,6 +726,12 @@ if (grepl(RDdatatmp[[1]][1], pattern = "\\d{0,2}:\\d{2}(?:[:.]\\d+)?|(\\d{0,2}:\
 } else {
 
 for (i in 1:length(file)) {
+
+assert_that(testFileExists(file[i]), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file[i])$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 # Source 5
 if (!nchar(file[i])) {
@@ -1312,6 +1327,12 @@ filesave3 <- tk_choose.dir(caption = "Select directory to save the .xlsx files")
 
 # Source 5 begins
 for (i in 1:length(file)) {
+
+assert_that(testFileExists(assign(file[i])), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(assign(file[i])$size == 0)), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
   assign(file[i], read.table(file[i], header = TRUE, row.names = NULL, comment.char = "#", fill = TRUE, stringsAsFactors = FALSE, sep = "\t"))
 # reads the qw data file as a table and fills in the table with NA for any missing values
@@ -1914,6 +1935,12 @@ if (confirm == FALSE) {
 
 for (i in 1:length(file)) { # Source 5
 
+assert_that(testFileExists(file[i]), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file[i])$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
+
 if (!nchar(file[i])) {
 
   stop("You did not choose a file. Please try again with a different file.")
@@ -2509,6 +2536,13 @@ overwrite <- overwrite
 
 DateTimes <- datetimes <- DateTimes_Timezone_Corrected <- DateTimes_Timezone_Corrected2 <- NULL
 # Source 14
+
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
+
 
 if (!nchar(file)) {
 

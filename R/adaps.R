@@ -67,8 +67,8 @@
 #'    \item r - read csv files and perform function, then bind together - Stack Overflow answered by bjoseph on Jan 8 2015. See \url{https://stackoverflow.com/questions/27846715/read-csv-files-and-perform-function-then-bind-together}.
 #'    \item multiple output filenames in R - Stack Overflow asked and edited by Gabelins on Feb 1 2013. See \url{https://stackoverflow.com/questions/14651594/multiple-output-filenames-in-r}.
 #'    \item r - Regex return file name, remove path and file extension - Stack Overflow answered and edited by Ananda Mahto on Feb 25 2013. See \url{https://stackoverflow.com/questions/15073753/regex-return-file-name-remove-path-and-file-extension/15073919}.
-#'    \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{https://r.789695.n4.nabble.com/How-to-change-the-default-Date-format-for-write-csv-function-td989826.html}.
-#'    \item RDocumentation: strptime {base}. See \url{http://www.rdocumentation.org/packages/base/versions/3.3.1/topics/strptime}.
+#'    \item R help - How to change the default Date format for write.csv function? answered by William Dunlap on Dec 28, 2009. See \url{https://hypatia.math.ethz.ch/pipermail/r-help/2009-December/416010.html}.
+#'    \item RDocumentation: strptime {base}. See \url{https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/strptime}.
 #'    \item convert date and time string to POSIX in R - Stack Overflow commented by cryo111 on Sep 18 2013. See \url{https://stackoverflow.com/questions/18874400/convert-date-and-time-string-to-posix-in-r/18874863}.
 #' }
 #'
@@ -80,7 +80,9 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#'
+#' \donttest{
+#'
 #' library("ie2misc")
 #' # Example to check the input file format
 #' # Copy and paste the following code into the R console if you
@@ -121,6 +123,9 @@
 #' @import gWidgets2
 #' @import gWidgets2tcltk
 #' @import openxlsx
+#' @import assertthat
+#' @import checkmate
+#'
 #'
 #' @name adaps
 NULL
@@ -132,6 +137,12 @@ adaps <- function (file = tk_choose.files(default = "", caption = "Select file(s
 overwrite <- overwrite
 
 if (interactive == TRUE) { # default
+
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (length(file) == 1) {
 
@@ -206,6 +217,12 @@ if (checkdelim == "\t") {
 } else {
 
 for (i in 1:length(file)) { # Source 5
+
+assert_that(testFileExists(file[i]), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file[i])$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (!nchar(file[i])) {
 
@@ -295,6 +312,12 @@ filesave3 <- tk_choose.dir(caption = "Select directory to save the .xlsx files")
 
 # Source 5 begins
 for (i in 1:length(file)) {
+
+assert_that(testFileExists(assign(file[i])), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(assign(file[i])$size == 0)), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 # check the delimiter of the file
   assign(file[i], get.delim(file[i], skip = 5L))
@@ -388,6 +411,12 @@ if (confirm == FALSE) {
 } else {
 
 for (i in 1:length(file)) { # Source 3
+
+assert_that(testFileExists(assign(file[i])), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(assign(file[i])$size == 0)), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (!nchar(file[i])) {
 
@@ -490,6 +519,12 @@ if (confirm == FALSE) {
 # Source 2 / provide a stop warning if the user wants to change the file
 
 } else {
+
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (file.info(file)$size == 0) {
 

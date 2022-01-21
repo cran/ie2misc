@@ -1,0 +1,17 @@
+I ASCI 03578500_PEAK_WATSTORE.TXT
+O File 03578500_PEAK_WATSTORE.PRT
+O Plot Style Graphics
+O Plot Format JPEG
+O Additional Watstore 03578500_PEAK_WATS
+O Export 03578500_PEAK_WATSTORE.EXP
+O Empirical 03578500_PEAK_WATSTORE.
+Station 03578500
+     Analyze EMA
+     PCPT_Thresh 1952 2012 0 1E+20 DEFAULT
+     PCPT_Thresh 1984 2003 1E+20 1E+20 GAP IN SYST RECORD, NO HISTORIC
+     BegYear 1952
+     EndYear 2012
+     HistPeriod 61
+     SkewOpt Station
+     GenSkew 0.02537303
+     LOType MGBT

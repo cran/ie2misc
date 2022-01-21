@@ -70,7 +70,8 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#'
+#' \donttest{
 #' # Example to check the input file format
 #' library("ie2misc")
 #'
@@ -113,6 +114,9 @@
 #' @import gWidgets2
 #' @import gWidgets2tcltk
 #' @import utils
+#' @import assertthat
+#' @import checkmate
+#'
 #'
 #'
 #' @name expFileOutput
@@ -129,6 +133,13 @@ overwrite <- overwrite
 
 station <- NULL
 # Source 10
+
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
+
 
 if (length(file) == 1) {
 
@@ -292,6 +303,12 @@ saveWorkbook(wb, filesave5, overwrite = overwrite)
 } else {
 
 for (i in 1:length(file)) { # Source 5
+
+assert_that(testFileExists(file[i]), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file[i])$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (!nchar(file[i])) {
 
@@ -489,6 +506,12 @@ file <- file[stri_detect_fixed(file, ".exp", case_insensitive = TRUE)]
 
 
 for (i in 1:length(file)) { # Source 5
+
+assert_that(testFileExists(file[i]), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file[i])$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (!nchar(file[i])) {
 

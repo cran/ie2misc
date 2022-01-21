@@ -71,9 +71,11 @@ psfFileChangeBATCH searches for a character vector of patterns
   user to change particular settings (for example, how outliers are handled).
 }
 \examples{
-\dontrun{
+\donttest{
 # Examples to change (a) .psf file(s) interactively and non-interactively
+
 library("ie2misc")
+
 psfFileChange() # default where interactive = TRUE
 # Follow the file dialog instructions
 
@@ -106,6 +108,7 @@ psfFileChangeBATCH() # Follow the file dialog instructions
 # GenSkew 0.0104293904
 # SkewOpt Weighted
 }
+
 
 }
 \author{

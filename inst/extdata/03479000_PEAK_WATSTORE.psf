@@ -1,0 +1,16 @@
+I ASCI 03479000_PEAK_WATSTORE.TXT
+O File 03479000_PEAK_WATSTORE.PRT
+O Plot Style Graphics
+O Plot Format JPEG
+O Additional Watstore 03479000_PEAK_WATS
+O Export 03479000_PEAK_WATSTORE.EXP
+O Empirical 03479000_PEAK_WATSTORE.
+Station 03479000
+     Analyze EMA
+     PCPT_Thresh 1916 2012 0 1E+20 DEFAULT
+     PCPT_Thresh 1916 1939 28000 1E+20 HISTORIC 1
+     BegYear 1916
+     EndYear 2012
+     HistPeriod 97
+     SkewOpt Station
+     LOType MGBT

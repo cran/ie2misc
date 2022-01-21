@@ -62,9 +62,11 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Examples to change (a) .psf file(s) interactively and non-interactively
+#'
 #' library("ie2misc")
+#' 
 #' psfFileChange() # default where interactive = TRUE
 #' # Follow the file dialog instructions
 #'
@@ -98,6 +100,7 @@
 #' # SkewOpt Weighted
 #' }
 #'
+#'
 #' @import stringi
 #' @import mgsub
 #' @import tcltk
@@ -105,6 +108,8 @@
 #' @import gWidgets2tcltk
 #' @import data.table
 #' @import tools
+#' @import checkmate
+#' @import assertthat
 #'
 #'
 #' @name psfFileChange
@@ -121,6 +126,12 @@ replacement <- c("SkewSE 0.361804179633127", "SkewSE 0.361804179633127", "GenSke
 # replacement pattern
 
 if (interactive == TRUE) { # default
+
+assert_that(testFileExists(file), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file)$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (length(file) == 1) {
 
@@ -173,6 +184,12 @@ writeLines(rddatatmp, filesave1)
 } else {
 
 for (i in 1:length(file)) { # Source 6
+
+assert_that(testFileExists(file[i]), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file[i])$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (!nchar(file[i])) {
 
@@ -233,6 +250,12 @@ filesave3 <- tk_choose.dir(caption = "Select directory to save the revised .psf 
 
 # Source 6 begins
 for (i in 1:length(file)) {
+
+assert_that(testFileExists(assign(file[i])), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(assign(file[i])$size == 0)), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
   assign(file[i], readLines(file[i]))
 # read in file as a string of characters line by line and save as rddatatmp
@@ -297,6 +320,12 @@ if (confirm == FALSE) {
 } else {
 
 for (i in 1:length(file)) { # Source 6
+
+assert_that(testFileExists(file[i]), msg = "You did not choose a file. Please select a file again.")
+# Source 1 / provide a stop warning if no file was selected
+
+assert_that((file.info(file[i])$size != 0), msg = "Your file is empty. Please try again with a different file.")
+# Sources 1 & 2 / only process non-empty files and provide a stop warning if the input file is empty
 
 if (!nchar(file[i])) {
 

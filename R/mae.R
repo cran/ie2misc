@@ -30,8 +30,8 @@
 #'	 specifying \code{na.rm = TRUE}, such as \code{mae(pre, obs, na.rm = TRUE)}.
 #'
 #'
-#' @source
-#' r - Better error message for stopifnot? - Stack Overflow answered by Andrie on Dec 1 2011. See \url{https://stackoverflow.com/questions/8343509/better-error-message-for-stopifnot}.
+#'
+#'
 #'
 #'
 #' @references
@@ -61,7 +61,7 @@
 #' mae(pre, obs)
 #'
 #'
-#' require("stats")
+#' library("stats")
 #' set.seed(100) # makes the example reproducible
 #' obs1 <- rnorm(100) # observed
 #' pre1 <- rnorm(100) # predicted
@@ -98,6 +98,9 @@
 #' # df2[, 2, with = FALSE][[1]] # predicted values from column 2 of df2
 #'
 #'
+#' @import checkmate
+#' @import assertthat
+#'
 #' @export
 mae <- function (predicted, observed, na.rm = FALSE) {
 
@@ -107,29 +110,15 @@ mae <- function (predicted, observed, na.rm = FALSE) {
 # The moments::kurtosis code has been helpful with regards to the treatment of
 # na.rm
 
-if (length(predicted) < 1 | length(observed) < 1) {
+assert_that(!any(qtest(predicted, "N>1(-Inf,Inf)") == FALSE), msg = "predicted is Inf, -Inf, a string, empty Or contains less than 1 value or 1 value only. Please try again.")
+# only process with finite values and provide a stop warning if not
 
-  stop("Check the length of the predicted and observed vectors since one of
-  them has a length of 0. Use a different set of values and then try again.")
-# Source 1 / provide a stop warning if the length of one of the vectors is 0
+assert_that(!any(qtest(observed, "N>1(-Inf,Inf)") == FALSE), msg = "observed is Inf, -Inf, a string, empty Or contains less less than 1 value or 1 value only. Please try again.")
+# only process with finite values and provide a stop warning if not
 
-} else {
-
-if (length(predicted) != length(observed)) {
-
-  stop("Check the length of the predicted and observed vectors since they don't
-  match. Use a different set of values and then try again.")
+assert_that(((length(predicted) != length(observed)) == FALSE), msg = "Check the length of the predicted and observed vectors since they don't match. Use a different set of values and then try again.")
 # Source 1 / provide a stop warning if the length of the numeric vectors do not match
 
-} else {
-
-if (!is.numeric(predicted) | !is.numeric(observed)) {
-
-  stop("Either the predicted or observed vector is not numeric. Use a different
-  set of values and then try again.")
-# Source 1 / provide a stop warning if the either one of the vectors is not numeric
-
-} else {
 
 if (na.rm == TRUE) {
 
@@ -147,8 +136,5 @@ if (na.rm == TRUE) {
 
   (n ^ -1) * (sum(abs(predicted - observed), na.rm = na.rm))
 
-}
-}
-}
 }
 }
