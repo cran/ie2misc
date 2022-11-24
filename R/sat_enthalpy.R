@@ -67,7 +67,7 @@
 #'
 #' @references
 #' \enumerate{
-#'    \item "Andrew Revering's List of Meteorological Formulas", \url{https://aprweather.com/pages/calc.htm}.
+#'    \item "Andrew Revering's List of Meteorological Formulas", \url{https://web.archive.org/web/20131222174626/https://aprweather.com/pages/calc.htm}. Retrieved thanks to the Internet Archive: Wayback Machine
 #'    \item Functional Testing and Design Guides, \emph{Functional Testing Guide: from the Fundamentals to the Field}, "Sidebar 3: How to Calculate Enthalpy", \url{https://web.archive.org/web/20150216015428/https://www.ftguide.org/ftg/IntegratedOperation/IOC-Sidebars-1-3/IOC-SB3-How-To-Calculate-Enthalpy.htm}. Retrieved thanks to the Internet Archive: Wayback Machine
 #' }
 #'
@@ -80,7 +80,7 @@
 #'
 #' @examples
 #'
-#' \donttest{
+#' \dontrun{
 #' library("ie2misc")
 #' # Example to check the input file format
 #'
@@ -116,16 +116,16 @@
 #' }
 #'
 #'
-#' @import stringi
-#' @import data.table
-#' @import readxl
-#' @import openxlsx
-#' @import tcltk
-#' @import gWidgets2
-#' @import gWidgets2tcltk
-#' @import utils
-#' @import assertthat
-#' @import checkmate
+#' @importFrom readxl read_excel excel_sheets
+#' @importFrom stringi stri_trans_toupper
+#' @importFrom data.table data.table fread setDT setnames
+#' @importFrom openxlsx createWorkbook addWorksheet writeDataTable setColWidths saveWorkbook
+#' @importFrom tcltk tk_choose.files tclvalue tkgetSaveFile tk_choose.dir
+#' @importFrom gWidgets2 gconfirm guiToolkit
+#' @importFrom utils write.csv
+#' @importFrom tools file_path_sans_ext
+#' @importFrom assertthat assert_that
+#' @importFrom checkmate testFileExists
 #'
 #'
 #' @name sat_enthalpy

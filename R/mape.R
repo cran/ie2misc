@@ -63,16 +63,19 @@
 #'
 #'
 #' @examples
+#' 
 #' library("ie2misc")
+#' 
 #' obs <- 1:10 # observed
 #' pre <- 2:11 # predicted
 #' mape(pre, obs)
 #'
 #'
-#' library("stats")
-#' set.seed(100) # makes the example reproducible
-#' obs1 <- rnorm(100) # observed
-#' pre1 <- rnorm(100) # predicted
+#' library("rando")
+#' 
+#' set_n(100) # makes the example reproducible
+#' obs1 <- r_norm(.seed = 109) # observed
+#' pre1 <- r_norm(.seed = 124) # predicted
 #'
 #'
 #' # using the vectors pre1 and obs1
@@ -98,6 +101,7 @@
 #'
 #'
 #' library("data.table")
+#' 
 #' # using a data.table of the numeric vectors pre1 and obs1
 #' df2 <- data.table(obs1, pre1)
 #' mape(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
@@ -107,8 +111,8 @@
 #'
 #'
 #'
-#' @import checkmate
-#' @import assertthat
+#' @importFrom checkmate qtest
+#' @importFrom assertthat assert_that
 #'
 #' @export
 mape <- function (predicted, observed, na.rm = FALSE) {
@@ -119,10 +123,10 @@ mape <- function (predicted, observed, na.rm = FALSE) {
 # The moments::kurtosis code has been helpful with regards to the treatment of
 # na.rm
 
-assert_that(!any(qtest(predicted, "N>1(-Inf,Inf)") == FALSE), msg = "predicted is Inf, -Inf, a string, empty Or contains less than 1 value or 1 value only. Please try again.")
+assert_that(!any(qtest(predicted, "N>1(,)") == FALSE), msg = "predicted is Inf, -Inf, a string, empty Or contains less than 1 value or 1 value only. Please try again.")
 # only process with finite values and provide a stop warning if not
 
-assert_that(!any(qtest(observed, "N>1(-Inf,Inf)") == FALSE), msg = "observed is Inf, -Inf, a string, empty Or contains less less than 1 value or 1 value only. Please try again.")
+assert_that(!any(qtest(observed, "N>1(,)") == FALSE), msg = "observed is Inf, -Inf, a string, empty Or contains less less than 1 value or 1 value only. Please try again.")
 # only process with finite values and provide a stop warning if not
 
 assert_that(((any(observed) == 0) == FALSE), msg = "observed is 0. Use a different set of values and then try again.")

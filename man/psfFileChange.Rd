@@ -71,7 +71,7 @@ psfFileChangeBATCH searches for a character vector of patterns
   user to change particular settings (for example, how outliers are handled).
 }
 \examples{
-\donttest{
+\dontrun{
 # Examples to change (a) .psf file(s) interactively and non-interactively
 
 library("ie2misc")

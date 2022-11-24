@@ -81,7 +81,7 @@
 #'
 #' @examples
 #'
-#' \donttest{
+#' \dontrun{
 #'
 #' library("ie2misc")
 #' # Example to check the input file format
@@ -115,16 +115,16 @@
 #' }
 #'
 #'
-#' @import stringi
+#' @importFrom stringi stri_detect_fixed stri_trans_toupper
 #' @importFrom lubridate mdy_hms
-#' @import reader
-#' @import tools
-#' @import tcltk
-#' @import gWidgets2
-#' @import gWidgets2tcltk
-#' @import openxlsx
-#' @import assertthat
-#' @import checkmate
+#' @importFrom reader get.delim
+#' @importFrom utils read.table
+#' @importFrom openxlsx createWorkbook addWorksheet setColWidths saveWorkbook writeDataTable
+#' @importFrom tcltk tk_choose.files tclvalue tkgetSaveFile tk_choose.dir
+#' @importFrom gWidgets2 gconfirm guiToolkit
+#' @importFrom tools file_path_sans_ext
+#' @importFrom assertthat assert_that
+#' @importFrom checkmate testFileExists
 #'
 #'
 #' @name adaps

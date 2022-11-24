@@ -71,7 +71,7 @@
 #'
 #' @examples
 #'
-#' \donttest{
+#' \dontrun{
 #' # Example to check the input file format
 #' library("ie2misc")
 #'
@@ -107,15 +107,15 @@
 #' # Follow the file dialog instructions
 #' }
 #'
-#' @import stringi
-#' @import data.table
-#' @import openxlsx
-#' @import tcltk
-#' @import gWidgets2
-#' @import gWidgets2tcltk
-#' @import utils
-#' @import assertthat
-#' @import checkmate
+#' @importFrom stringi stri_trim_both stri_trans_toupper stri_detect_fixed
+#' @importFrom data.table fread setDT setcolorder set rbindlist ":="
+#' @importFrom openxlsx createWorkbook addWorksheet writeData setColWidths saveWorkbook
+#' @importFrom tcltk tk_choose.files tclvalue tkgetSaveFile tk_choose.dir
+#' @importFrom gWidgets2 gconfirm guiToolkit
+#' @importFrom utils read.table write.csv
+#' @importFrom tools file_path_sans_ext
+#' @importFrom assertthat assert_that
+#' @importFrom checkmate testFileExists
 #'
 #'
 #'

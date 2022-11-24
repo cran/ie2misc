@@ -99,7 +99,7 @@ The following lines are representative of the .rdb format used in the files
 }
 \examples{
 
-\donttest{
+\dontrun{
 
 library("ie2misc")
 # Example to check the input file format

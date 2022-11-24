@@ -39,7 +39,7 @@
 #'
 #'
 #' @references
-#' Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.2419}.
+#' Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{https://rmets.onlinelibrary.wiley.com/doi/10.1002/joc.2419}.
 #'
 #'
 #' @encoding UTF-8
@@ -60,16 +60,19 @@
 #'
 #'
 #' @examples
+#' 
 #' library("ie2misc")
+#' 
 #' obs <- 1:10 # observed
 #' pre <- 2:11 # predicted
 #' dr(pre, obs)
 #'
 #'
-#' library("stats")
-#' set.seed(100) # makes the example reproducible
-#' obs1 <- rnorm(100) # observed
-#' pre1 <- rnorm(100) # predicted
+#' library("rando")
+#' 
+#' set_n(100) # makes the example reproducible
+#' obs1 <- r_norm(.seed = 400) # observed
+#' pre1 <- r_norm(.seed = 500) # predicted
 #'
 #'
 #' # using the vectors pre1 and obs1
@@ -95,6 +98,7 @@
 #'
 #'
 #' library("data.table")
+#' 
 #' # using a data.table of the numeric vectors pre1 and obs1
 #' df2 <- data.table(obs1, pre1)
 #' dr(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
@@ -103,8 +107,8 @@
 #' # df2[, 2, with = FALSE][[1]] # predicted values from column 2 of df2
 #'
 #'
-#' @import assertthat
-#' @import checkmate
+#' @importFrom assertthat assert_that
+#' @importFrom checkmate qtest
 #'
 #' @export
 dr <- function (predicted, observed, na.rm = FALSE) {
@@ -112,10 +116,10 @@ dr <- function (predicted, observed, na.rm = FALSE) {
 # The base::mean.default code has been helpful with regards to the treatment
 # of non-numeric values
 
-assert_that(!any(qtest(predicted, "N>1(-Inf,Inf)") == FALSE), msg = "predicted is Inf, -Inf, a string, empty Or contains less than 1 value or 1 value only. Please try again.")
+assert_that(!any(qtest(predicted, "N>1(,)") == FALSE), msg = "predicted is Inf, -Inf, a string, empty Or contains less than 1 value or 1 value only. Please try again.")
 # only process with finite values and provide a stop warning if not
 
-assert_that(!any(qtest(observed, "N>1(-Inf,Inf)") == FALSE), msg = "observed is Inf, -Inf, a string, empty Or contains less less than 1 value or 1 value only. Please try again.")
+assert_that(!any(qtest(observed, "N>1(,)") == FALSE), msg = "observed is Inf, -Inf, a string, empty Or contains less less than 1 value or 1 value only. Please try again.")
 # only process with finite values and provide a stop warning if not
 
 assert_that(((length(predicted) != length(observed)) == FALSE), msg = "Check the length of the predicted and observed vectors since they don't match. Use a different set of values and then try again.")

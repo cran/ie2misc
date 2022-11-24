@@ -85,7 +85,7 @@ In the Examples section, there is R code for the user to view the example
 }
 \examples{
 
-\donttest{
+\dontrun{
 # Example to check the input file format
 library("ie2misc")
 

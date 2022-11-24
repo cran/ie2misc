@@ -79,7 +79,7 @@
 #'
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library("ie2misc")
 #' # Examples to change (an) QW file(s) interactively and non-interactively
 #' file1 <- "https://waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=03584500"
@@ -106,17 +106,16 @@
 #'
 #'
 #'
-#' @import stringi
 #' @importFrom lubridate guess_formats ymd dmy mdy ymd_hm dmy_hm mdy_hm ymd_hms dmy_hms mdy_hms
-#' @import tools
-#' @import tcltk
-#' @import gWidgets2
-#' @import gWidgets2tcltk
-#' @import readxl
-#' @import openxlsx
-#' @import data.table
-#' @import assertthat
-#' @import checkmate
+#' @importFrom stringi stri_replace_all_fixed stri_trans_toupper
+#' @importFrom data.table data.table copy setDT setcolorder set setnames ":="
+#' @importFrom openxlsx createWorkbook addWorksheet writeData setColWidths saveWorkbook writeDataTable
+#' @importFrom tcltk tk_choose.files tclvalue tkgetSaveFile tk_choose.dir
+#' @importFrom gWidgets2 gconfirm guiToolkit
+#' @importFrom utils read.table
+#' @importFrom tools file_path_sans_ext
+#' @importFrom assertthat assert_that
+#' @importFrom checkmate testFileExists
 #'
 #'
 #' @name qw

@@ -62,7 +62,7 @@
 #'
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # Examples to change (a) .psf file(s) interactively and non-interactively
 #'
 #' library("ie2misc")
@@ -101,15 +101,13 @@
 #' }
 #'
 #'
-#' @import stringi
-#' @import mgsub
-#' @import tcltk
-#' @import gWidgets2
-#' @import gWidgets2tcltk
-#' @import data.table
-#' @import tools
-#' @import checkmate
-#' @import assertthat
+#' @importFrom stringi stri_trans_toupper stri_detect_fixed
+#' @importFrom mgsub mgsub
+#' @importFrom tcltk tk_choose.files tclvalue tkgetSaveFile tk_choose.dir
+#' @importFrom gWidgets2 gconfirm guiToolkit
+#' @importFrom tools file_path_sans_ext
+#' @importFrom checkmate testFileExists
+#' @importFrom assertthat assert_that
 #'
 #'
 #' @name psfFileChange

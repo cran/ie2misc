@@ -99,7 +99,7 @@ qw, qw2 and qwBATCH functions perform the same processes on the raw QW
   and US Virgin Islands).
 }
 \examples{
-\donttest{
+\dontrun{
 library("ie2misc")
 # Examples to change (an) QW file(s) interactively and non-interactively
 file1 <- "https://waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=03584500"
