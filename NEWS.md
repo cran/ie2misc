@@ -1,4 +1,11 @@
-﻿# ie2misc 0.9.0 (24 November 2022)
+﻿# ie2misc 0.9.1 (19 September 2023)
+
+* Received an e-mail issue from Kurt Hornik on 19 August 2023 regarding the use of "@docType package" which is no longer valid. Replaced the ie2misc.R file with ie2misc-package.R to reflect the requested change.
+* Added `spelling` to the Suggests
+* Made slight revisions to the README
+
+
+# ie2misc 0.9.0 (24 November 2022)
 
 * Changed all import statements to importFrom statements after an issue was filed by Toby Dylan Hocking for my `iemisc` package about `data.table` and `zoo` conflicts
 * Revised some of the function examples

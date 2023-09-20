@@ -1,6 +1,6 @@
 # ie2misc
 
-R package that contains Irucka Embry's miscellaneous USGS functions (processing .exp and .psf files, statistical error functions, "+" dyadic operator for use with NA, creating ADAPS and QW spreadsheet files, calculating saturated enthalpy, etc.). Irucka created these functions while a Cherokee Nation Technology Solutions (CNTS) United States Geological Survey (USGS) Contractor and/or USGS employee.
+R package that contains Irucka Embry&#8217;s miscellaneous USGS functions (processing .exp and .psf files, statistical error functions, &ldquo;+&rdquo; dyadic operator for use with NA, creating ADAPS and QW spreadsheet files, calculating saturated enthalpy, etc.). Irucka created these functions while a Cherokee Nation Technology Solutions (CNTS) United States Geological Survey (USGS) Contractor and/or USGS employee.  
 
 
 # Installation from CRAN
@@ -8,6 +8,16 @@ R package that contains Irucka Embry's miscellaneous USGS functions (processing 
 ```R
 install.packages("ie2misc")
 ```
+
+
+# Help
+
+With credit due to the `matlab` package, for a complete list of functions and the package DESCRIPTION file, use:  
+
+```R
+library(help = "ie2misc")
+```
+
 
 
 # Examples
@@ -79,11 +89,21 @@ qw2(file8)
 
 # Disclaimer
 
-This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey, an agency of the United States Department of Interior. For more information, see the official [USGS copyright policy](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits#copyright)
+This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey, an agency of the United States Department of Interior. For more information, see the official [USGS copyright policy](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits#copyright)  
 
-Although this software program has been used by the U.S. Geological Survey (USGS), no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.
+Although this software program has been used by the U.S. Geological Survey (USGS), no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.  
 
-This software is provided "AS IS."
+This software is provided &ldquo;AS IS&rdquo;.  
 
 
-Note: The datasets included in the extdata folder may not have received the USGS's Director's approval and thus may still be provisional and subject to revision. The data are included in this package for illustration purposes only. The data are released on the condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use.
+Note: The datasets included in the extdata folder may not have received the USGS&#8217;s Director&#8217;s approval and thus may still be provisional and subject to revision. The data are included in this package for illustration purposes only. The data are released on the condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use.  
+
+
+
+
+# Donations Accepted
+
+If you want to support the continued development of this and my other R packages, feel free to:  
+
+<p><script src="https://liberapay.com/iaembry/widgets/button.js"></script>
+<noscript><a href="https://liberapay.com/iaembry/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript></p>

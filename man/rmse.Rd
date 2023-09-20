@@ -90,7 +90,7 @@ rmse(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
 
 }
 \references{
-Cort J. Willmott and Kenji Matsuura, "Advantages of the mean-absolute error (MAE) over the root mean square error (RMSE) in assessing average model performance", \emph{Climate Research}, Vol. 30: 79-82, 2005, \url{http://climate.geog.udel.edu/~climate/publication_html/Pdf/WM_CR_05.pdf}.
+Cort J. Willmott and Kenji Matsuura, "Advantages of the mean-absolute error (MAE) over the root mean square error (RMSE) in assessing average model performance", \emph{Climate Research}, Vol. 30: 79-82, 2005, \url{https://web.archive.org/web/20230119121852/climate.geog.udel.edu/~climate/publication_html/Pdf/WM_CR_05.pdf}. Retrieved thanks to the Internet Archive: Wayback Machine
 }
 \seealso{
 \code{\link{mape}} for mean absolute percent error (MAPE), \code{\link{mae}} for

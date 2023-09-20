@@ -95,7 +95,7 @@ dr(df2[, 2, with = FALSE][[1]], df2[, 1, with = FALSE][[1]])
 
 }
 \references{
-Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, \url{https://rmets.onlinelibrary.wiley.com/doi/10.1002/joc.2419}.
+Cort J. Willmott, Scott M. Robeson, and Kenji Matsuura, "A refined index of model performance", \emph{International Journal of Climatology}, Volume 32, Issue 13, pages 2088-2094, 15 November 2012, article from ResearchGate: \url{https://www.researchgate.net/publication/235961403_A_refined_index_of_model_performance}.
 }
 \seealso{
 \code{\link{mape}} for mean absolute percent error (MAPE), \code{\link{mae}} for

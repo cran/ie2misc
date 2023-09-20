@@ -7,8 +7,7 @@
 #'  and making it easier to view USGS ADAPS and QW files within a spreadsheet
 #'  application.
 #'
-#' @docType package
-#' @name ie2misc
+#'
 #' @importFrom lubridate guess_formats ymd dmy mdy ymd_hm dmy_hm mdy_hm ymd_hms dmy_hms mdy_hms
 #' @importFrom readxl read_excel excel_sheets
 #' @importFrom mgsub mgsub
@@ -22,4 +21,12 @@
 #' @importFrom tools file_path_sans_ext
 #' @importFrom assertthat assert_that
 #' @importFrom checkmate testFileExists qtest testScalarNA
+#'
+#'
+
+#' @docType package
+#' @name ie2misc
+#' @keywords internal 
+"_PACKAGE"
+
 NULL
