@@ -31,7 +31,7 @@ This function "defines a dyadic operator that will behave differently than
 }
 \examples{
 
-library("ie2misc")
+library(ie2misc)
 
 a <- 1:10
 b <- c(98:106, NA)
@@ -68,7 +68,7 @@ df1 <- data.frame(a, b)
 df1[, 1] \%+na\% df1[, 2]
 
 
-library("data.table")
+library(data.table)
 
 # using a data.table of the numeric vectors a and b
 

@@ -101,7 +101,7 @@ The following lines are representative of the .rdb format used in the files
 
 \dontrun{
 
-library("ie2misc")
+library(ie2misc)
 # Example to check the input file format
 # Copy and paste the following code into the R console if you
 # wish to see the ADAPS .rdb input file format.

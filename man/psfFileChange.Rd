@@ -50,7 +50,7 @@ Revised .psf text file(s)
 }
 \description{
 The .psf file is a script file that records the specifications used to run
-the USGS PeakFQ program (\url{http://water.usgs.gov/software/PeakFQ/}) for
+the USGS PeakFQ program (\url{https://www.usgs.gov/tools/peakfq}) for
 a station. psfFileChange and psfFileChangeBATCH modify the original .psf
 settings.
 }
@@ -74,7 +74,7 @@ psfFileChangeBATCH searches for a character vector of patterns
 \dontrun{
 # Examples to change (a) .psf file(s) interactively and non-interactively
 
-library("ie2misc")
+library(ie2misc)
 
 psfFileChange() # default where interactive = TRUE
 # Follow the file dialog instructions

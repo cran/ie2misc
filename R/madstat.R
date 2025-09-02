@@ -23,9 +23,9 @@
 #' @param na.rm logical vector that determines whether the missing
 #'   values should be removed or not.
 #'
-#' @return mean-absolute deviation (MAD) as a numeric \code{\link{vector}} or a named
-#'   numeric vector if using a named object (\code{\link{matrix}}, \code{\link{data.frame}},
-#'   or \code{\link{data.table}}). MAD has the same units as the observed values. The default choice is that any NA values
+#' @return mean-absolute deviation (MAD) as a numeric \code{\link[base]{vector}} or a named
+#'   numeric vector if using a named object (\code{\link[base]{matrix}}, \code{\link[base]{data.frame}},
+#'   or \code{\link[data.table]{data.table}}). MAD has the same units as the observed values. The default choice is that any NA values
 #'   will be kept (\code{na.rm = FALSE}). This can be changed by specifying \code{na.rm = TRUE}, such as 
 #'   \code{madstat(obs, na.rm = TRUE)}.
 #'
@@ -56,14 +56,14 @@
 #'
 #' @examples
 #' 
-#' library("ie2misc")
+#' library(ie2misc)
 #' 
 #' # Example 1.18 from Kottegoda (page 15)
 #' obs <- c(50, 56, 42, 53, 49) # annual rainfall in cm
 #' madstat(obs)
 #'
 #'
-#' library("rando")
+#' library(rando)
 #' 
 #' set_n(100) # makes the example reproducible
 #' obs1 <- r_norm(.seed = 300) # observed
@@ -85,7 +85,7 @@
 #'
 #'
 #' 
-#' library("data.table")
+#' library(data.table)
 #' 
 #' # using a data.table of the numeric vector obs1
 #' df2 <- data.table(obs1)

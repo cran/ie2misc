@@ -81,12 +81,12 @@
 #' @examples
 #'
 #' \dontrun{
-#' library("ie2misc")
+#' library(ie2misc)
 #' # Example to check the input file format
 #'
 #' # Copy and paste the following code into the R console if you
 #' # wish to see the input file format.
-#' library("openxlsx")
+#' library(openxlsx)
 #' openXL(system.file("extdata", "Saturated_Enthalpy_Example_Input.xlsx",
 #' package = "ie2misc"))
 #'   # opens the workbook using the default spreadsheet application

@@ -100,7 +100,7 @@ qw, qw2 and qwBATCH functions perform the same processes on the raw QW
 }
 \examples{
 \dontrun{
-library("ie2misc")
+library(ie2misc)
 # Examples to change (an) QW file(s) interactively and non-interactively
 file1 <- "https://waterdata.usgs.gov/nwis/dv?cb_00060=on&format=rdb&site_no=03584500"
 file2 <- "&period=&begin_date=1904-07-01&end_date=2016-06-22"

@@ -2,8 +2,8 @@
 % Please edit documentation in R/ie2misc-package.R
 \docType{package}
 \name{ie2misc}
-\alias{ie2misc}
 \alias{ie2misc-package}
+\alias{ie2misc}
 \title{ie2misc: Irucka Embry's miscellaneous USGS functions}
 \description{
 ie2misc provides many functions that will be useful to people within the
@@ -18,6 +18,16 @@ Useful links:
 \itemize{
   \item \url{https://gitlab.com/iembry/ie2misc}
   \item Report bugs at \url{https://gitlab.com/iembry/ie2misc/-/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Irucka Embry \email{iembry@ecoccs.com}
+
+Other contributors:
+\itemize{
+  \item Anne Hoos [contributor]
+  \item Timothy H. Diehl [contributor]
 }
 
 }

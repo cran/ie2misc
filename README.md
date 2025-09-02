@@ -10,6 +10,7 @@ install.packages("ie2misc")
 ```
 
 
+
 # Help
 
 With credit due to the `matlab` package, for a complete list of functions and the package DESCRIPTION file, use:  
@@ -19,8 +20,34 @@ library(help = "ie2misc")
 ```
 
 
+With credit due to [Getting Help with R](https://www.r-project.org/help.html) for the following 2 methods of help:  
+
+
+```R
+help(mape, package = "ie2misc") # mean absolute percent error (MAPE) help
+
+help(package = "ie2misc") # help for the ie2misc package
+```
+
+
+
+
+# Vignette Viewing
+
+If you wish to browse the `ie2misc` Vignettes, please copy-and-paste the following code into R:  
+
+```R
+library(ie2misc)
+
+utils::browseVignettes("ie2misc")
+```
+
+
+
+
 
 # Examples
+
 ```R
 library("ie2misc")
 require("stats")
@@ -87,23 +114,20 @@ qw2(file8)
 
 
 
-# Disclaimer
+# License & Disclaimer
 
 This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey, an agency of the United States Department of Interior. For more information, see the official [USGS copyright policy](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits#copyright)  
 
 Although this software program has been used by the U.S. Geological Survey (USGS), no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.  
 
-This software is provided &ldquo;AS IS&rdquo;.  
+This software is provided &ldquo;AS IS.&rdquo;  
 
 
-Note: The datasets included in the extdata folder may not have received the USGS&#8217;s Director&#8217;s approval and thus may still be provisional and subject to revision. The data are included in this package for illustration purposes only. The data are released on the condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use.  
+**Note:** The datasets included in the extdata folder may not have received the USGS&#8217;s Director&#8217;s approval and thus may still be provisional and subject to revision. The data are included in this package for illustration purposes only. The data are released on the condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use.  
 
 
 
 
-# Donations Accepted
+# Citation
 
-If you want to support the continued development of this and my other R packages, feel free to:  
-
-<p><script src="https://liberapay.com/iaembry/widgets/button.js"></script>
-<noscript><a href="https://liberapay.com/iaembry/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript></p>
+Please refer to the CITATION file for the correct way to cite `ie2misc`.  

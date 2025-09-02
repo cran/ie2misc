@@ -50,14 +50,14 @@ MAPE is expressed as
 }
 \examples{
 
-library("ie2misc")
+library(ie2misc)
 
 obs <- 1:10 # observed
 pre <- 2:11 # predicted
 mape(pre, obs)
 
 
-library("rando")
+library(rando)
 
 set_n(100) # makes the example reproducible
 obs1 <- r_norm(.seed = 109) # observed
@@ -86,7 +86,7 @@ mape(df1[, 2], df1[, 1])
 # df1[, 2] # predicted values from column 2 of df1
 
 
-library("data.table")
+library(data.table)
 
 # using a data.table of the numeric vectors pre1 and obs1
 df2 <- data.table(obs1, pre1)

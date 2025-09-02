@@ -1,4 +1,12 @@
-﻿# ie2misc 0.9.1 (19 September 2023)
+﻿# ie2misc 0.9.2 (2 September 2025)
+
+* Received an e-mail issue from Kurt Hornik on 23 July 2025 regarding the check results issues for this package. Specifically, the use of Rd files with "\link{} targets missing package anchors in the 'Rd cross-references' check". Updated the madstat.Rd file to properly link to `data.table`. Also, there was an issue with the missing Authors@R field in the DESCRIPTION file. The DESCRIPTION file has been updated.
+* Made revisions to the README file.
+* Changed all library("package") calls to library(package) in all examples in the function files and README, as needed.
+
+
+
+# ie2misc 0.9.1 (19 September 2023)
 
 * Received an e-mail issue from Kurt Hornik on 19 August 2023 regarding the use of "@docType package" which is no longer valid. Replaced the ie2misc.R file with ie2misc-package.R to reflect the requested change.
 * Added `spelling` to the Suggests
